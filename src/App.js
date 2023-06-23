@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Button from 'react-bootstrap/Button';
 
-function App() {
+import './App.css';
+import SongPlaylist from './components/SongPlaylist/SongPlaylist';
+import MoviePlaylist from './components/MoviePlaylist/MoviePlaylist';
+
+const App = () => {
+  const handleReset = () => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <h1>Playlist</h1>
+      <div>
+        <Button variant='danger' onClick={() => handleReset()}>
+          Reset Both Playlist
+        </Button>
+      </div>
+      <hr />
+      <div>
+        <SongPlaylist />
+      </div>
+      <hr />
+      <div>
+        <MoviePlaylist />
+      </div>
+      <hr />
     </div>
   );
-}
+};
 
 export default App;
