@@ -1,7 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button } from 'react-bootstrap';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { Button, ListGroup } from 'react-bootstrap';
 
 import { createRandomSong } from '../../data/Faker';
 import { addSong, removeSong } from '../../store';

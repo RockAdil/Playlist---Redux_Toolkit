@@ -1,12 +1,19 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 
 import './App.css';
 import SongPlaylist from './components/SongPlaylist/SongPlaylist';
 import MoviePlaylist from './components/MoviePlaylist/MoviePlaylist';
+import { reset, resets } from './store';
 
 const App = () => {
-  const handleReset = () => {};
+  const dispatch = useDispatch();
+
+  const handleReset = () => {
+    dispatch(reset());
+    dispatch(resets());
+  };
 
   return (
     <div className='container'>

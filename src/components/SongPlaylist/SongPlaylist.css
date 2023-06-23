@@ -1,12 +1,10 @@
 .lst-grp {
   margin-top: 1.5rem;
   padding: 0 1.5rem;
-  /* min-width: 50%; */
 }
 
 .lst {
   padding: 5px;
 
   display: flex;
-  /* justify-content: space-between; */
 }

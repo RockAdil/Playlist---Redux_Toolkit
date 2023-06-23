@@ -1,3 +1,10 @@
-.btn-movie {
-  margin-top: 1rem;
+.lst-grp {
+  margin-top: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.lst {
+  padding: 5px;
+
+  display: flex;
 }

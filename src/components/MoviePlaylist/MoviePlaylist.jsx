@@ -1,29 +1,38 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button, ListGroup } from 'react-bootstrap';
 
 import { createRandomMovie } from '../../data/Faker';
+import { addMovie, removeMovie } from '../../store';
 import './MoviePlaylist.css';
 
 const MoviePlaylist = () => {
-  const moviePlaylist = [];
+  const dispatch = useDispatch();
+
+  const moviePlaylist = useSelector((state) => {
+    return state.movies;
+  });
 
   const handleMovieAdd = (movie) => {
-    // To Do:
-    // Add movie to list of movies
+    dispatch(addMovie(movie));
   };
+
   const handleMovieRemove = (movie) => {
-    // To Do:
-    // Remove movie from list of movies
+    dispatch(removeMovie(movie));
   };
 
   const renderedMovie = moviePlaylist.map((movie) => {
     return (
-      <li key={movie}>
-        {movie}
-        <Button variant='outline-danger' size='sm'>
+      <div className='lst' key={movie}>
+        <ListGroup.Item>{movie}</ListGroup.Item>
+        <Button
+          variant='danger'
+          size='sm'
+          onClick={() => handleMovieRemove(movie)}
+        >
           X
         </Button>
-      </li>
+      </div>
     );
   });
 
@@ -35,13 +44,15 @@ const MoviePlaylist = () => {
           <Button
             className='btn-movie'
             variant='primary'
-            onClick={handleMovieAdd(createRandomMovie())}
+            onClick={() => handleMovieAdd(createRandomMovie())}
           >
             + Add Movie to Playlist
           </Button>
         </div>
       </div>
-      <ul>{renderedMovie}</ul>
+      <div className='lst-grp'>
+        <ListGroup className=''>{renderedMovie}</ListGroup>
+      </div>
     </div>
   );
 };
