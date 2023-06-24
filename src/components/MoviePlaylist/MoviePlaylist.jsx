@@ -24,7 +24,7 @@ const MoviePlaylist = () => {
   const renderedMovie = moviePlaylist.map((movie) => {
     return (
       <div className='lst' key={movie}>
-        <ListGroup.Item>{movie}</ListGroup.Item>
+        <ListGroup.Item className='lst-item'>{movie}</ListGroup.Item>
         <Button
           variant='danger'
           size='sm'
@@ -38,7 +38,7 @@ const MoviePlaylist = () => {
 
   return (
     <div className='movie'>
-      <div>
+      <div className='movie-head'>
         <h3>Movie Playlist</h3>
         <div>
           <Button

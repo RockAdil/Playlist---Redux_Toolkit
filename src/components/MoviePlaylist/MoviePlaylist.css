@@ -8,3 +8,25 @@
 
   display: flex;
 }
+
+@media screen and (max-width: 400px) {
+  .movie-head {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0.5rem;
+    flex: 1;
+  }
+
+  .movie h3 {
+    font-size: 1.3rem;
+    padding-right: 1rem;
+  }
+
+  .lst-grp {
+    margin-top: 1rem;
+  }
+
+  .lst {
+    padding: 2px;
+  }
+}

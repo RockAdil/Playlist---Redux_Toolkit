@@ -5,14 +5,13 @@ import Button from 'react-bootstrap/Button';
 import './App.css';
 import SongPlaylist from './components/SongPlaylist/SongPlaylist';
 import MoviePlaylist from './components/MoviePlaylist/MoviePlaylist';
-import { reset, resets } from './store';
+import { reset } from './store';
 
 const App = () => {
   const dispatch = useDispatch();
 
   const handleReset = () => {
     dispatch(reset());
-    dispatch(resets());
   };
 
   return (
@@ -32,6 +31,10 @@ const App = () => {
         <MoviePlaylist />
       </div>
       <hr />
+
+      <footer className='footer'>
+        © 2023 Playlist-Adil. All rights reserved.
+      </footer>
     </div>
   );
 };

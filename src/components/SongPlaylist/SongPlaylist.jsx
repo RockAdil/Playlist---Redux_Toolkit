@@ -38,7 +38,7 @@ const SongPlaylist = () => {
 
   return (
     <div className='song'>
-      <div>
+      <div className='song-head'>
         <h3>Song Playlist</h3>
         <div>
           <Button
